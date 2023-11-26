@@ -20,6 +20,7 @@ namespace mw2mm
         const int showConsole = 1;
 
         bool isAmmoInfinite = false;
+        bool isHealthInfinite = false;
 
         protected override void Render()
         {
@@ -28,6 +29,11 @@ namespace mw2mm
             if (isAmmoInfinite == true) 
             {
                 infiniteAmmo();
+            }
+            ImGui.Checkbox("Infinite Health", ref isHealthInfinite);
+            if (isHealthInfinite == true)
+            {
+                infiniteHealth();
             }
             ImGui.End();
         }
@@ -44,6 +50,16 @@ namespace mw2mm
             //Console.WriteLine(ammo);
             swed.WriteInt(ammoAddress1, 5);
             swed.WriteInt(ammoAddress2, 3);
+        }
+
+        public void infiniteHealth()
+        {
+            Swed swed = new Swed("iw4mp");
+            IntPtr moduleBase = swed.GetModuleBase("iw4mp.exe");
+            //IntPtr healthAddress = swed.ReadPointer(moduleBase, 0x02EE01D0) + 0x19C;
+            IntPtr healthAddress = swed.ReadPointer(moduleBase, 0x00119EB0) + 0x684;
+
+            swed.WriteInt(healthAddress, 100000);
         }
 
         public static void Main(string[] args)
