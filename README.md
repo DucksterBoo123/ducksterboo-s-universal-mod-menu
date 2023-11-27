@@ -1,2 +1,4 @@
-# ducksterboo's mw2 mod menu
-Mod menu for Modern Warfare 2 (2009) using Swed32 and ImGui.NET.
+# ducksterboo's universal mod menu
+Universal mod menu for various games using Swed32 and ImGui.NET.
+
+Currently only supports Modern Warfare (2009)
