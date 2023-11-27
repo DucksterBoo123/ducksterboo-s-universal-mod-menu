@@ -16,5 +16,5 @@ Metal Gear Solid Five: The Phantom Pain
 Escape From Tarkov
 
 "You know you're going to get VAC banned, right?" <br>
-"..." <br>
+... <br>
 "Perhaps"
